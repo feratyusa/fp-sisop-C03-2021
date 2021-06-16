@@ -1,4 +1,4 @@
-# Final Project C03 SISOP 2021
+## Final Project C03 SISOP 2021
 
 - Ega Prabu Pamungkas (05111940000014)
 - A. Zidan Abdillah Majid (05111940000070)
