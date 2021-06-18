@@ -231,7 +231,13 @@ int main(){
                     			char database[100];
                     			strcpy(database, query[2]);
                     			if(is_database_exist(database)){
-                    				if(check_permission(database, userNow[i])){
+                    				if(is_root(userNow[i])){
+                    					strcpy(usingDatabase[i], database);
+                    					char mess[DATA_BUFFER];
+                    					sprintf(mess, "Using %s\n", database);
+                    					fill_buf(mess);
+                    				}
+                    				else if(check_permission(database,userNow[i])){
                     					strcpy(usingDatabase[i], database);
                     					char mess[DATA_BUFFER];
                     					sprintf(mess, "Using %s\n", database);
@@ -246,7 +252,6 @@ int main(){
                     				fill_buf("Database doesn't exist\n");
                     			}
                     		}
-
 
                     		ret_val = send(all_connections[i], buf, sizeof(buf), 0);
                     	}
